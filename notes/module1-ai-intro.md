@@ -15,9 +15,9 @@ There are two approaches of programming intelligence into a machine:
 1. **Top-down Approach (Symbolic reasoning)**
     - you are telling the machine exactly what to do using rules, strategies and logic
   
-2.** Bottom-up Approach (Machine learning)**
+2.**Bottom-up Approach (Machine learning)**
 
-    - Machine learning; start with simple building blocks and let the machine learn patterns from        data
+    - start with simple building blocks and let the machine learn patterns from data
   
 3. **There are some other possible approaches like emergent, synergetic or multi-agent approach**
    
