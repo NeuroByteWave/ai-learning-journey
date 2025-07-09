@@ -1,0 +1,29 @@
+# --- 1. Define the Student class ---
+class Student:
+    def __init__(self, name, age, grade):
+        self.name = name
+        self.age = age
+        self.grade = grade  # Example: "A", "B", etc.
+
+    def get_info(self):
+        return f"{self.name}, Age: {self.age}, Grade: {self.grade}"
+
+# --- 2. Manage a list of students ---
+students = []
+
+# --- 3. Add students to the list ---
+def add_student(name, age, grade):
+    student = Student(name, age, grade)
+    students.append(student)
+
+# --- 4. Show all students ---
+def show_students():
+    if not students:
+        print("No students found.")
+    for student in students:
+        print(student.get_info())
+
+# --- 5. Example usage ---
+add_student("Alice", 15, "A")
+add_student("Bob", 14, "B")
+show_students()
