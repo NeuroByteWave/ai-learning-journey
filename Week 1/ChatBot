@@ -1,0 +1,67 @@
+import datetime
+import random
+
+# Dictionary of predefined responses
+responses = {
+    "hello": "Hi, how can I help you!",
+    "how are you": "I'm a python programme, so i dont have feelings!",
+    "bye": "Goodbye! Have a great day or don't, I don't really care!",
+}
+
+# ASCII welcome message
+def welcome_message():
+    print("=" * 50)
+    print("🤖  Welcome to ChatBot!")
+    print("Type 'exit' if you want the programme to stop.")
+    print("=" * 50)
+
+# Return the current time as a string
+def get_time():
+    now = datetime.datetime.now()
+    return f"It is {now.strftime('%H:%M:%S')}."
+
+# Return a random joke from a predefined list
+def tell_joke():
+    jokes = [
+        "Why did the Earth's core collapse? Yo mama too fat",
+        "Why did the chicken cross the road? To get to the other side, duh!",
+    ]
+    return random.choice(jokes)
+
+# Main chatbot loop
+def chatbot():
+    welcome_message()
+    
+    while True:
+        try:
+            user_input = input("You: ").strip().lower()
+            
+            if not user_input:
+                print("Bot: Please type something!")
+                continue
+
+            if user_input == "exit":
+                print("Bot: Bye 👋")
+                break
+
+            elif user_input in responses:
+                print("Bot:", responses[user_input])
+
+            elif "time" in user_input:
+                print("Bot:", get_time())
+
+            elif "joke" in user_input:
+                print("Bot:", tell_joke())
+
+            else:
+                print("Bot: I cannot understand that. Can you ask me something else?")
+
+        except KeyboardInterrupt:
+            print("\nBot: Exiting... Bye!")
+            break
+        except Exception as e:
+            print(f"Bot: Oops! Something went wrong. ({e})")
+
+# Run the chatbot
+if __name__ == "__main__":
+    chatbot()
